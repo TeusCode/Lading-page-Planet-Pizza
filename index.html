@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Pizza</title>
+    <link rel="shortcut icon" href="assets/img/icon.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        :root {
+            --cor-primaria: #C0392B;
+            --cor-secundaria: #E67E22;
+            --cor-contraste: rgb(218, 216, 216);
+            --cor-terciaria: #F1C40F;
+            --cor-quatenaria: #27AE60;
+            --cor-footer: #2C3E50;
+            --color-fonte-padrao: white;
+            --color-fonte-inverso: black;
+            --espacamento-padrao: 16px;
+            
+        }
+
+        header.cabecario {
+            background-color: #f9f1d8;
+            height: 70px;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header .menu-nav .item-menu {
+            display: inline;
+            list-style-type: none;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            padding: 15px;
+        }
+
+        header .menu-nav .item-menu:hover {
+            background-color: #dad2bd;
+            border-radius: 5px;
+            cursor: pointer;
+            color: rgb(221, 76, 76);
+        }
+
+        header .logo-menu {
+            height: 50px;
+        }
+
+        header .btn-pecaSite {
+            height: 30px;
+            width: 120px;
+            border: none;
+            border-radius: 30px;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            background-color: white;
+            color: rgb(221, 76, 76);
+            font-size: 0.8em;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        main .container {
+            background-color: plum;
+            width: 100vw;
+            height: 1000px;
+
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        main .anuncio {
+            margin: auto;
+            padding: 50px;
+            background-color: var(--cor-primaria);
+            /* background-image: url('assets/img/background-anuncio.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover; */
+
+            display: flex;
+            justify-content: right;
+        }
+
+        main .anuncio .overlay {
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 35px;
+            max-width: 600px;
+
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr 1fr;
+        }
+
+        main .anuncio .titulo {
+            text-align: center;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            grid-row: 1/2;
+            grid-column: 1/7;
+
+            display: flex;
+            align-items: center;
+        }
+
+        main .anuncio .qrcode {
+            grid-row: 2/3;
+            grid-column: 2/3;
+            border-radius: 20px;
+        }
+
+        main .anuncio div {
+            grid-row: 2/3;
+            grid-column: 4/5;
+
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        main .anuncio .descricao {
+            width: 100px;
+            padding: 10px;
+            color: white;
+            grid-row: 2/3;
+            grid-column: 3/4;
+        }
+
+
+
+        main .anuncio .btn-padrao {
+            height: 40px;
+            width: 120px;
+            margin: 5px;
+            border: none;
+            border-radius: 30px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: white;
+            color: rgb(221, 76, 76);
+            font-size: 0.8em;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+
+            display: flex;
+            align-items: center;
+            align-self: center;
+            justify-content: center;
+        }
+
+        main .box-cupom {
+            background-color: rgb(161, 0, 0);
+            height: 320px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .box-cupom img {
+            width: 600px;
+            height: 190px;
+
+            border-radius: 40px;
+            background-color: white;
+        }
+
+        main .produtos {
+            background-color: var(--cor-primaria);
+            height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: top;
+            flex-wrap: wrap;
+        }
+
+        main .produtos .produtos-titulo {
+            background-color: var(--cor-primaria);
+            color: white;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 3em;
+            font-family: Arial, Helvetica, sans-serif;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main .produtos .btn-cardapio {
+            width: 250px;
+            height: 50px;
+            border-radius: 50px;
+            color: var(--cor-primaria);
+            font-weight: bold;
+            font-size: 0.35em;
+            border: 1px var(--cor-primaria);
+        }
+
+        main .produtos .card-produto {
+            margin-top: 20px;
+            margin-right: 25px;
+            background-color: var(--color-fonte-padrao);
+            color: var(--color-fonte-inverso);
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        main .produtos .card-titulo {
+            color: rgb(194, 0, 0);
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-top: 25px;
+            margin-bottom: 20px;
+        }
+
+        main .produtos .btn-card {
+            width: 100px;
+            height: 30px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            color: var(--cor-primaria);
+            border: 1px var(--cor-primaria) solid;
+        }
+
+        main .produtos .card-image {
+            width: 200px;
+            height: 120px;
+            border-radius: 15px;
+
+            background-color: #2C3E50;
+        }
+
+
+        main .contato {
+            background-color: var(--cor-contraste);
+            height: 200px;
+        }
+
+        main .aplicativo {
+            background-color: var(--color-fonte-padrao);
+            height: 300px;
+        }
+
+        footer .historia {
+            background-color: var(--cor-footer);
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecario">
+        <img class="logo-menu" src="assets/img/logo-menu.png" alt="">
+        <nav class="menu-nav">
+            <ul>
+                <li class="item-menu">Home</li>
+                <li class="item-menu">Produtos</li>
+                <li class="item-menu">Seja um franqueado</li>
+            </ul>
+        </nav>
+        <button class="btn-pecaSite">Peça pelo site</button>
+    </header>
+    <main class="container">
+        <section class="anuncio">
+            <div class="overlay">
+                <h1 class="titulo">Peça a sua pizza pelo app ou site</h1>
+                <img class="qrcode" src="assets/img/qrcode-aplicativo.png" alt="">
+                <div class="descricao">
+                    <img src="assets/img/playstore.png" alt="">
+                </div>
+                <div> <button class="btn-padrao">Baixar aplicativo</button>
+                    <button class="btn-padrao">Pedir pizza</button>
+                </div>
+            </div>
+        </section>
+        <section class="box-cupom">
+            <div class="cupom-desconto">
+                <img src="" alt="">
+            </div>
+        </section>
+        <section class="produtos">
+            <div class="produtos-titulo">
+                <h3>CONHEÇA NOSSOS PRODUTOS</h3>
+                <button class="btn-cardapio">Ver Cardápio</button>
+            </div>
+
+            <div class="card-produto">
+                <p class="card-titulo">Pizzas</p>
+                <button class="btn-card">Ver mais</button>
+                <img class="card-image" src="" alt="">
+            </div>
+
+            <div class="card-produto">
+                <p class="card-titulo">Combos</p>
+                <button class="btn-card">Ver mais</button>
+                <img class="card-image" src="" alt="">
+            </div>
+
+            <div class="card-produto">
+                <p class="card-titulo">Entradas</p>
+                <button class="btn-card">Ver mais</button>
+                <img class="card-image" src="" alt="">
+            </div>
+
+            <div class="card-produto">
+                <p class="card-titulo">Sobremesas</p>
+                <button class="btn-card">Ver mais</button>
+                <img class="card-image" src="" alt="">
+            </div>
+        </section>
+        <section class="contato">
+
+            <div>
+                <p>ENCONTRE A UNIDADE MAIS PRÓXIMA DE VOCÊ</p>
+                <p>Informe seu CEP para encontrarmos a Pizza Hut mais próxima de você.</p>
+                <input type="text" placeholder="CEP">
+                <button>Buscar Cep</button>
+                <a href="">Ou Utilize a localização atual</a>
+            </div>
+        </section>
+        <section class="aplicativo">
+            <div>
+                <p>BAIXE O APP E APROVEITE O CLUBE HUT</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="historia">
+            <div>
+                <p>Quem somos, nossa historia Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur ullam
+                    sint, qui autem, dolorem eos aperiam architecto, corrupti rem amet officia est culpa ab animi neque
+                    id dolor quasi. Consectetur.</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quo quasi aliquid eos sit fugiat
+                    perspiciatis aut quae obcaecati odio nihil nulla soluta, nostrum quis laborum iusto quia mollitia
+                    eaque!</p>
+                <p>ATENDIMENTO AO CLIENTE</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquid sequi blanditiis suscipit
+                    atque consectetur impedit quibusdam nostrum illo dolorem, error libero cupiditate dolore voluptatum
+                    nihil natus dignissimos, alias quaerat?</P>
+            </div>
+        </section>
+        <section>
+
+        </section>
+    </footer>
+
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>
