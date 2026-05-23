@@ -60,22 +60,29 @@
         }
 
         header .btn-pecaSite {
-            height: 30px;
-            width: 120px;
+            background-color: #f9f1d8;
+            height: 40px;
+            width: 130px;
+            margin-right: 20px;
             border: none;
             border-radius: 30px;
             padding-bottom: 15px;
             padding-top: 15px;
-            background-color: white;
             color: rgb(221, 76, 76);
+            border: 1px var(--cor-primaria) solid;
             font-size: 0.8em;
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+            cursor: pointer;
 
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        header .btn-pecaSite:hover{
+            background-color: var(--cor-primaria);
+            color: var(--color-fonte-padrao);
         }
 
         main .container {
@@ -134,7 +141,6 @@
 
             display: flex;
             flex-direction: column;
-
         }
 
         main .anuncio .descricao {
@@ -149,23 +155,30 @@
 
         main .anuncio .btn-padrao {
             height: 40px;
-            width: 120px;
+            width: 170px;
             margin: 5px;
             border: none;
             border-radius: 30px;
             padding-bottom: 10px;
             padding-top: 10px;
-            background-color: white;
-            color: rgb(221, 76, 76);
-            font-size: 0.8em;
+            color: var(--color-fonte-padrao);
+            background-color: var(--cor-primaria);
+            border: 1px var(--color-fonte-padrao) solid;
+            font-size: 1em;
             font-weight: bold;
             font-family: Arial, Helvetica, sans-serif;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212);
+            cursor: pointer;
 
             display: flex;
             align-items: center;
             align-self: center;
             justify-content: center;
+        }
+
+        main .anuncio .btn-padrao:hover{
+            background-color: var(--color-fonte-padrao);
+            color: var(--cor-primaria);
         }
 
         main .box-cupom {
@@ -187,7 +200,7 @@
 
         main .produtos {
             background-color: var(--cor-primaria);
-            height: 500px;
+            padding-bottom: 90px;
 
             display: flex;
             justify-content: center;
@@ -197,6 +210,8 @@
 
         main .produtos .produtos-titulo {
             background-color: var(--cor-primaria);
+            margin-bottom: 50px;
+            margin-top: 50px;
             color: white;
             width: 100%;
             padding-left: 30px;
@@ -210,13 +225,22 @@
         }
 
         main .produtos .btn-cardapio {
-            width: 250px;
+            width: 280px;
             height: 50px;
             border-radius: 50px;
-            color: var(--cor-primaria);
+            color: var(--color-fonte-padrao);
             font-weight: bold;
-            font-size: 0.35em;
-            border: 1px var(--cor-primaria);
+            font-size: 0.37em;
+            border: 1px var(--color-fonte-padrao) solid;
+            background-color: var(--cor-primaria);
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+
+        main .produtos .btn-cardapio:hover{
+            background-color: var(--color-fonte-padrao);
+            color: var(--cor-primaria);
         }
 
         main .produtos .card-produto {
@@ -249,7 +273,14 @@
             margin-bottom: 10px;
             color: var(--cor-primaria);
             border: 1px var(--cor-primaria) solid;
+            font-weight: bold;
+            cursor: pointer;
         }
+
+         main .produtos .btn-card:hover{
+            color: var(--color-fonte-padrao);
+            background-color: var(--cor-primaria);
+         }
 
         main .produtos .card-image {
             width: 200px;
